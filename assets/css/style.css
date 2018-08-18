@@ -1,206 +1,243 @@
-/* Create a y-scroll bar */
-html {
-    overflow-y: scroll;
- }
-
-/* Background with image from Subtle Pattern */
-body {
-    background-image: url("../images/upfeathers.png");
-    margin: 0;
-    padding: 0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 18px;
-    line-height: 150%;
-     
-}
-
-/* Create a nav bar which always stay fixed at the top of the page */
-.header {
-    color: #ffffff;
-    background-color: #ffffff;
-    margin: 0;
-    text-align: center;
-    height: 70px;
-    width: 100%;
-    border: solid #cccccc;
-    border-width: 1px;
-    z-index: 100;
-    overflow: hidden;
-    position: fixed;
-    top: 0;   
-}
-
-/* Create a container with my name */
-.myname { 
-    font-family: Georgia, 'Times New Roman', Times, serif;    
-    font-size: 30px;
-    font-weight: bold;
-    background-color: #4aaaa5;
-    display: inline-block;
-    text-align: center;
-    line-height: 70px;
-    position: relative;
-    right: 251px;
-    padding: 0 40px;
-}
-
-/* Create component of the nav bar */
-.about, .portfolio, .contact {
-    display: inline-block;
-    text-align: center;
-    line-height: 50px;
-    left: 255px;
-    position: relative;
-    color: #777777;
-    padding: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Create "About Me" section */
-h2 {
-    font-family: Georgia, 'Times New Roman', Times, serif;    
-    font-size: 30px;
-    font-weight: bold;
-    padding-bottom: 30px;
-    color: #4aaaa5;   
-} 
-
-/* Create horizontal ruler */
-hr {
-    color: #dddddd;
-}
-
-/* Create a container for the main content in the About Me and Contact pages */
-.main_content_container {
-    padding: 39px;
-    width: 880px;
-    border-width: 1px;
-    border: solid #dddddd;
-    margin: 90px auto;
-    height: auto;
-    background-color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    z-index: -1;
-}
-
-/* Format the profile picture */
-
-#bio-image {
-    float: left;
-    width: 200px;
-    height: 230px;
-    padding-right: 40px;
-}
-
-/* Format the introductory paragraph */
-p {
-    width: 100%;
-    padding-top: 30px;
-    color: #777777;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-    width: 100%; /* Full width */
-    padding: 12px; /* Some padding */  
-    border: 1px solid #cccccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-}
-
-/* Style the submit button with a specific background color etc */
-input[type=submit] {
-    background-color: #4aaaa5;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-/* Add a background color and some padding around the form */
-.container {
-    color: #777777;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-
-
-/* Create a container for the main content in the Porfolio page*/
-.main_content_container.portfolio_content {
-    height: 900px;
-}
-
-/* Create frame for the pictures */
-.gallery {
-    margin: 50px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 220px;
-    position: relative;
-    overflow: hidden;
+* {
     box-sizing: border-box;
 }
 
-/* Create hover effect when hovering over pictures */
-.gallery:hover {
-    border: 1px solid #777;
+body {
+    background-image: url("../images/upfeathers.png");
+    font-size: 18px;
+    line-height: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #777;
 }
 
-/* Format and resize images */
-.gallery img {
+.container {
+    width: 100%;
+    max-width: 960px;
+    /* auto-center everything */
+    margin: 0 auto;
+    /* floating elements if need to, any container followed the previous one get a clear from it */
+    clear: both;
+}
+
+h1, h3, p {
+    margin-bottom: 20px;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+h1, h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    color: #4aaaa5;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 49px;
+    border-bottom: 3px solid #ddd;
+    padding-bottom:20px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+#masthead {
+    background: #fff;
+    margin: 0 0 30px;
+    z-index: 99;
+    color: #fff;
+    overflow: auto;
+    border-bottom: 2px solid #ccc;
+    position: fixed;
+    width: 100%;
+}
+
+#logo {
+    width: 250px;
+    height: 90px;
+    background: #4aaaa5;
+    float: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    line-height: 90px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+/* nav bar */
+nav {
+    float: right;
+    margin-top: 25px;
+}
+
+/* nav bar components */
+nav a {
+    color: #999;
+    text-decoration: none;
+    margin-left: 15px;
+    /* make blocks lay next to each other if there is enough room */
+    display: inline-block;
+    border-left: 1px solid #efefef; 
+    padding-left: 15px;
+    line-height: 18px;
+}
+
+/* first <a> link under the nav bar, which is the About, without border */
+nav a:first-child {
+    border-left: 0 none;
+}
+
+#main-container {
+    padding-top: 130px;
+}
+
+
+.main-section {
+    background: #fff;
+    padding: 30px;
+    margin: 0 0 40px 0;
+    width: 100%;
+    float: left;
+    border: 1px solid #ddd;
+}
+
+.bio-image {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+    float: left;
+    margin-right: 25px;
+}
+
+h3 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    line-height: 22px;
+}
+
+footer {
+    background: #666;
+    color: #fff;
+    padding: 30px 0;
+    clear: both;
+    border-top: 8px solid #4aaaa5;
+    color: #ccc;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* portfolio */
+
+.gallery {
+    width: 274px;
+    overflow: auto;
     position: relative;
     float: left;
-    width:  220px;
-    height: 150px;
-    background-repeat:   no-repeat;
-    background-size:     cover;
+    margin: 20px 0 25px;
 }
 
-/* Description for each picture */
-.description {
+.gallery:nth-child(even) {
+    margin-right: 40px; 
+}
+
+.gallery img {
+    width: 274px;
+    height: 180px;
+    border: 0 none;
+    opacity: .8;
+    border: 1px solid #ddd;
+}
+
+.gallery h3 {
+    border-bottom: 0;
+    background: #4aaaa5;
+    color: #fff;
+    text-align: center;
     position: absolute;
-    bottom: 10px;
-    background-color: #4aaaa5;
+    bottom: 20px;
+    padding: 15px;
     width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    color: #ffffff;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 30px;
+    margin-bottom: 0;
+    font-weight: 300;
 }
 
-/* Create footer text "Copyright" */
-.footer_text {
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
+/* contact */
+
+#contact-form ul {
+    margin-bottom: 20px;
 }
 
-/* Create footer */
-.footer {
-    color: #ffffff;
-    background-color: #666666;
-    margin: 0;
-    text-align: center;
-    height: 50px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 100;
-    border-top: 10px solid #4aaaa5;
-    
+#contact-form li {
+    margin-bottom: 10px;
 }
-  
-    
+
+label, input[type=text], input[type=email], textarea {
+    display: block;
+    width: 100%
+}
+
+input[type=text], input[type=email], textarea {
+    height: 35px;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+textarea {
+    height: 200px;
+}
+
+input[type=submit] {
+    background: #4aaaa5;
+    border: 0 none;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+/* max-widths: 980px, 768px and 640px */
+
+@media screen and (max-width: 980px) {
+    .container {
+        width: 100%;
+    }
+}
+
+
+/* Width at 768px and below */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        
+    }
+}
+
+/* Width at 640px and below */
+@media screen and (max-width: 640px) {
+
+    .container, #logo, nav{
+        width: 100%;
+    }
+
+    nav {
+        text-align: center;
+        margin-top: 0;
+        padding: 10px 0 10px 0;
+    }
+
+    nav ul {
+        display: inline-block;
+    }
+
+    .header {
+      position: static;
+    }
+}
